@@ -6,7 +6,10 @@ with open('reviews.txt', 'r') as f:
 		count += 1 #count = count + 1的快寫法
 		if count % 1000 == 0: #'%'= 求餘數,ex: 10 % 3=1, 5 % 3=2 
 			print(len(data))
-print(len(data))
-print(data[0])
-print('-------------------------------')
-print(data[1])
+print('檔案讀取完成 , 總共有', len(data), '筆資料')
+
+#每筆留言平均長度
+sum_len = 0
+for d in data:
+	sum_len = sum_len + len(d)#亦可打 sum_len += len(d)
+print('留言的平均長度為', sum_len/len(data), '個字')
